@@ -1,0 +1,31 @@
+"use client";
+
+interface SwashDividerProps {
+  color?: string;
+  className?: string;
+  width?: number;
+  height?: number;
+}
+
+export default function SwashDivider({
+  color = "#0B7C0D",
+  className = "",
+  width = 200,
+  height = 12,
+}: SwashDividerProps) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={width}
+      height={height}
+      viewBox="0 0 261 16"
+      fill="none"
+      className={className}
+    >
+      <path
+        d="M258.968 5.12034C199.392 14.142 117.547 17.7994 59.1094 13.2479C40.2533 11.7037 21.3973 9.59049 2.62245 6.98965C0.427996 6.66454 -1.44136 2.76328 1.56586 3.08839C86.4182 14.0607 172.165 9.59051 256.936 -6.57021e-05C259.293 -6.529e-05 262.3 4.63268 258.968 5.12034Z"
+        fill={color}
+      />
+    </svg>
+  );
+}
