@@ -9,10 +9,10 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: "#0B7C0D",
-        "primary-dark": "#085e0a",
-        "primary-light": "#D3F2D3",
-        "primary-mid": "#c1eac1",
+        primary: "#1B5E20",
+        "primary-dark": "#144A17",
+        "primary-light": "#E8F5E9",
+        "primary-mid": "#C8E6C9",
       },
       fontFamily: {
         sans: ["DM Sans", "sans-serif"],

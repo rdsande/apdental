@@ -9,14 +9,14 @@ export default function VideoSection() {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.15 });
 
   return (
-    <section className="bg-white relative z-10 pt-16">
+    <section className="bg-[#E2F2E2] relative z-10 pt-24 pb-16">
       <div className="max-w-4xl mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-10">
-          <p className="text-primary font-semibold tracking-widest uppercase text-sm mb-3">
+          <p className="text-primary font-semibold tracking-widest uppercase text-xs mb-3">
             Clinic Tour
           </p>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-700">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
             See AP Dental in Action
           </h2>
         </div>
@@ -24,7 +24,7 @@ export default function VideoSection() {
         {/* Video — overlaps into the green section below */}
         <div
           ref={ref}
-          className={`-mb-32 relative z-10 rounded-2xl overflow-hidden shadow-2xl ring-1 ring-gray-200 transition-all duration-700 ${
+          className={`-mb-[280px] relative z-10 rounded-[24px] overflow-hidden shadow-[0_25px_60px_-15px_rgba(0,0,0,0.4)] ring-4 ring-white transition-all duration-700 ${
             inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >

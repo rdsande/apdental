@@ -5,9 +5,9 @@
 @tailwind utilities;
 
 :root {
-  --primary: #0B7C0D;
-  --primary-dark: #085e0a;
-  --primary-light: #D3F2D3;
+  --primary: #1B5E20;
+  --primary-dark: #144A17;
+  --primary-light: #E8F5E9;
 }
 
 * {
@@ -34,14 +34,14 @@ body {
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, #0B7C0D 0%, #1aad1d 100%);
+  background: linear-gradient(135deg, #1B5E20 0%, #2E7D32 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .swash-divider path {
-  fill: #0B7C0D;
+  fill: #1B5E20;
 }
 
 /* Custom scrollbar */
@@ -52,11 +52,11 @@ body {
   background: #f1f1f1;
 }
 ::-webkit-scrollbar-thumb {
-  background: #0B7C0D;
+  background: #1B5E20;
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #085e0a;
+  background: #144A17;
 }
 
 /* Smooth card hover */
@@ -65,7 +65,7 @@ body {
 }
 .card-hover:hover {
   transform: translateY(-6px);
-  box-shadow: 0 20px 40px rgba(11, 124, 13, 0.15);
+  box-shadow: 0 20px 40px rgba(27, 94, 32, 0.15);
 }
 
 /* Hero background blob */

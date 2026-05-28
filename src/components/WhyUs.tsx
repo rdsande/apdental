@@ -39,7 +39,7 @@ const reasons = [
   },
 ];
 
-type Reason = { icon: React.ComponentType<{ className?: string; size?: number }>; title: string; desc: string };
+type Reason = { icon: React.ComponentType<any>; title: string; desc: string };
 
 function ReasonCard({ reason, index }: { reason: Reason; index: number }) {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
@@ -83,7 +83,7 @@ export default function WhyUs() {
             <h2 className="text-3xl md:text-4xl font-bold text-gray-700 mb-4 leading-tight">
               Healthy Smiles, Backed by Dental Expertise
             </h2>
-            <SwashDivider color="#0B7C0D" width={180} height={10} className="mb-6" />
+            <SwashDivider color="#1B5E20" width={180} height={10} className="mb-6" />
             <div className="rounded-2xl overflow-hidden shadow-lg mt-8">
               <Image
                 src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=700&q=80"

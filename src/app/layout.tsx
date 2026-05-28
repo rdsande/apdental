@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 export const metadata: Metadata = {
   title: "AP Dental - Professional Dental Care",
@@ -7,6 +10,9 @@ export const metadata: Metadata = {
     "AP Dental provides exceptional, comprehensive dental care for the whole family. Book your appointment today.",
   keywords:
     "dental, dentist, teeth, oral care, dental clinic, AP Dental",
+  icons: {
+    icon: "/icon.jpg",
+  },
   openGraph: {
     title: "AP Dental - Professional Dental Care",
     description:
@@ -22,7 +28,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className="font-sans antialiased">{children}</body>
+      <body className="font-sans antialiased">
+        <Navbar />
+        {children}
+        <Footer />
+        <WhatsAppButton />
+      </body>
     </html>
   );
 }

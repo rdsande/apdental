@@ -8,7 +8,7 @@ interface SwashDividerProps {
 }
 
 export default function SwashDivider({
-  color = "#0B7C0D",
+  color = "#1B5E20",
   className = "",
   width = 200,
   height = 12,

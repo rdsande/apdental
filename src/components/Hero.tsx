@@ -27,11 +27,11 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen overflow-hidden bg-gray-100"
+      className="relative min-h-screen overflow-hidden bg-primary lg:bg-gray-100"
       ref={heroRef}
     >
-      {/* ── Green left panel (curved right edge) ── */}
-      <div className="absolute inset-0 pointer-events-none">
+      {/* ── Green left panel (curved right edge) — Only on Desktop ── */}
+      <div className="absolute inset-0 pointer-events-none hidden lg:block">
         <svg
           viewBox="0 0 100 100"
           preserveAspectRatio="none"
@@ -46,69 +46,82 @@ export default function Hero() {
       </div>
 
       {/* Subtle dot texture on green panel */}
-      <div className="absolute inset-y-0 left-0 w-[58%] opacity-5 pointer-events-none"
+      <div className="absolute inset-y-0 left-0 w-full lg:w-[58%] opacity-5 pointer-events-none"
         style={{
           backgroundImage: "radial-gradient(circle, #fff 1px, transparent 1px)",
           backgroundSize: "24px 24px",
         }}
       />
 
-      {/* ── Right — family photo ── */}
-      <div className="absolute top-[60px] bottom-0 right-0 w-[50%] flex items-end justify-center pointer-events-none">
-        <Image
-          src="/dental.png"
-          alt="Happy family with healthy smiles"
-          width={680}
-          height={780}
-          className="object-contain object-bottom w-full h-[95%]"
-          priority
-        />
-      </div>
-
-      {/* ── Left content (sits above the green layer) ── */}
-      <div className="relative z-10 min-h-screen flex items-center">
+      {/* ── Main content (Responsive Grid) ── */}
+      <div className="relative z-10 min-h-screen flex items-center pt-24 pb-12 lg:py-0">
         <div className="w-full max-w-7xl mx-auto px-6 lg:px-10">
-          <div className="w-full lg:w-[48%] flex flex-col gap-5 py-28">
-
-            {/* Headline */}
-            <h1
-              className="reveal opacity-0 text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.1] text-white"
-              style={{ animationDelay: "0.1s" }}
-            >
-              Affordable,
-              <br />
-              <span className="text-primary-light">family-focused</span>
-              <br />
-              dental care.
-            </h1>
-
-            {/* Sub */}
-            <p
-              className="reveal opacity-0 text-white/80 text-sm leading-relaxed max-w-sm"
-              style={{ animationDelay: "0.25s" }}
-            >
-              AP Dental delivers exceptional, compassionate care for the whole
-              family — from routine cleanings to advanced cosmetic treatments.
-            </p>
-
-            {/* CTAs */}
-            <div
-              className="reveal opacity-0 flex flex-wrap gap-4"
-              style={{ animationDelay: "0.4s" }}
-            >
-              <a
-                href="#book"
-                className="flex items-center gap-2 bg-white text-primary hover:bg-primary-light font-bold px-6 py-3 rounded-[6px] transition-all duration-200 hover:shadow-xl hover:-translate-y-0.5 text-sm"
+          <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            
+            {/* Left Column: Headline & Action Buttons */}
+            <div className="lg:col-span-6 flex flex-col gap-5 text-left pt-8 lg:pt-0">
+              {/* Headline */}
+              <h1
+                className="reveal opacity-0 text-4xl md:text-5xl lg:text-5xl font-bold leading-[1.1] text-white"
+                style={{ animationDelay: "0.1s" }}
               >
-                <Calendar size={18} />
-                Book an Appointment
-              </a>
-              <a
-                href="#services"
-                className="flex items-center gap-2 border-2 border-white/60 text-white hover:bg-white/10 font-semibold px-6 py-3 rounded-[6px] transition-all duration-200 text-sm"
+                Affordable,
+                <br />
+                <span className="text-white/90">family-focused</span>
+                <br />
+                dental care.
+              </h1>
+
+              {/* Sub */}
+              <p
+                className="reveal opacity-0 text-white/80 text-base leading-relaxed max-w-sm"
+                style={{ animationDelay: "0.25s" }}
               >
-                View Services
-              </a>
+                AP Dental delivers exceptional, compassionate care for the whole
+                family — from routine cleanings to advanced cosmetic treatments.
+              </p>
+
+              {/* CTAs */}
+              <div
+                className="reveal opacity-0 flex flex-wrap gap-4"
+                style={{ animationDelay: "0.4s" }}
+              >
+                <a
+                  href="/booking"
+                  className="flex items-center gap-2 bg-white text-primary hover:bg-primary-light font-bold px-6 py-3 rounded-[6px] transition-all duration-200 hover:shadow-xl hover:-translate-y-0.5 text-sm"
+                >
+                  <Calendar size={18} />
+                  Book an Appointment
+                </a>
+                <a
+                  href="/services"
+                  className="flex items-center gap-2 border-2 border-white/60 text-white hover:bg-white/10 font-semibold px-6 py-3 rounded-[6px] transition-all duration-200 text-sm"
+                >
+                  View Services
+                </a>
+              </div>
+            </div>
+
+            {/* Right Column: Family Photos (Responsive flow) */}
+            <div className="lg:col-span-6 relative w-full flex items-end justify-center pointer-events-none lg:absolute lg:bottom-0 lg:right-0 lg:top-[60px] lg:w-[50%] mt-6 lg:mt-0">
+              <div className="relative w-full max-w-[380px] sm:max-w-[450px] lg:max-w-[680px] aspect-[680/780] flex items-end justify-center">
+                <Image
+                  src="/iconhero.png"
+                  alt=""
+                  width={680}
+                  height={780}
+                  className="absolute z-0 object-contain object-bottom w-full h-[80%] opacity-60"
+                  aria-hidden="true"
+                />
+                <Image
+                  src="/dental.png"
+                  alt="Happy family with healthy smiles"
+                  width={680}
+                  height={780}
+                  className="relative z-10 object-contain object-bottom w-full h-[95%]"
+                  priority
+                />
+              </div>
             </div>
 
           </div>

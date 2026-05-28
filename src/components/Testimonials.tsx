@@ -77,7 +77,7 @@ export default function Testimonials() {
             What Our Patients Say
           </h2>
           <div className="flex justify-center mb-4">
-            <SwashDivider color="#0B7C0D" width={180} height={10} />
+            <SwashDivider color="#1B5E20" width={180} height={10} />
           </div>
           <p className="text-gray-500 max-w-xl mx-auto text-lg">
             Real stories from real patients who trust AP Dental with their smiles.

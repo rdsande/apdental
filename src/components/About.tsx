@@ -1,13 +1,14 @@
 "use client";
 
 import { useInView } from "react-intersection-observer";
+import { Users, Smile, Stethoscope } from "lucide-react";
 import SwashDivider from "./SwashDivider";
 
 export default function About() {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.15 });
 
   return (
-    <section id="about" className="pt-56 pb-24 bg-primary relative overflow-hidden">
+    <section id="about" className="pt-80 pb-24 relative overflow-hidden" style={{ backgroundColor: "#0B7C0D" }}>
       {/* Decorative circles */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2" />
       <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2" />
@@ -67,14 +68,17 @@ export default function About() {
           </p>
           <div className="grid grid-cols-3 gap-4">
             {[
-              { value: "5,000+", label: "Patients Served" },
-              { value: "98%", label: "Satisfaction Rate" },
-              { value: "20+", label: "Specialist Doctors" },
-            ].map(({ value, label }) => (
+              { value: "5,000+", label: "Patients Served", icon: Users },
+              { value: "98%", label: "Satisfaction Rate", icon: Smile },
+              { value: "20+", label: "Specialist Doctors", icon: Stethoscope },
+            ].map(({ value, label, icon: Icon }) => (
               <div
                 key={label}
-                className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 text-center border border-white/20"
+                className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 flex flex-col items-center text-center border border-white/20 transition-all duration-300 hover:bg-white/15"
               >
+                <div className="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center mb-3 text-primary-light">
+                  <Icon size={20} />
+                </div>
                 <p className="text-2xl font-bold text-primary-light">{value}</p>
                 <p className="text-xs text-white/70 mt-1">{label}</p>
               </div>
